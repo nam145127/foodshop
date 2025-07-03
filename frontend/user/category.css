@@ -1,0 +1,178 @@
+/* 🔹 Font và cơ bản */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+  color: #1f2937;
+  margin: 0;
+  padding: 0;
+}
+
+/* 🔸 Header gradient đẹp */
+header {
+  background: linear-gradient(to right, #f97316, #fb923c);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+header nav a {
+  color: white;
+  font-weight: 800;
+  padding: 6px 12px;
+  border-radius: 18px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+header nav a:hover {
+  color: #f97316;
+  text-decoration: none;
+  background-color: #fefdfc;
+}
+
+@media (max-width: 640px) {
+  header nav {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+}
+
+/* 🔍 Tìm kiếm */
+input#search-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+input#search-input:focus {
+  border-color: #fb923c;
+  box-shadow: 0 0 0 2px rgba(251, 146, 60, 0.2);
+}
+
+/* 📂 Danh mục món ăn */
+.category-item {
+  border-radius: 0.75rem;
+  background-color: #fff7ed;
+  padding: 1rem;
+  transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+  cursor: pointer;
+  text-align: center;
+}
+
+.category-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(255, 102, 0, 0.15);
+  background-color: #fff3e0;
+}
+
+/* 🔥 Món hot / gợi ý / combo */
+.food-card {
+  border: 1px solid #ffe0c1;
+  border-radius: 12px;
+  background-color: #fff9f5;
+  padding: 0.75rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.food-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(255, 140, 0, 0.2);
+}
+
+.food-card img {
+  border-radius: 10px;
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ✅ Khi chọn → nổi bật */
+.selected {
+  background-color: #ffedd5 !important;
+  box-shadow: 0 0 0 3px rgba(251, 146, 60, 0.4);
+  transform: scale(1.02);
+}
+
+/* 🛒 Nút thêm vào giỏ */
+.add-to-cart-btn {
+  background-color: #f97316;
+  color: white;
+  border: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 0.5rem;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #ea580c;
+}
+
+/* 🧧 Banner */
+section img {
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  object-fit: cover;
+}
+
+/* 📦 Combo grid layout */
+#combo-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+  justify-items: center;
+  align-items: start;
+}
+
+/* 🧠 Section tiêu đề */
+section h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #ea580c;
+  margin-bottom: 0.75rem;
+}
+
+section {
+  scroll-margin-top: 80px;
+}
+
+/* 👣 Footer */
+footer {
+  background-color: #fff7ed;
+  padding: 2rem 1rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+  border-top: 1px solid #fcd34d;
+  text-align: center;
+}
+
+footer p {
+  margin: 0.25rem 0;
+}
+
+footer p.text-orange-500 {
+  font-weight: 600;
+  color: #f97316;
+}

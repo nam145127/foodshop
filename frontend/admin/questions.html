@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Quản lý câu hỏi khách hàng</title>
+  <style>
+    /* CSS giống trước + thêm style cho nút */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: #f9fafb;
+      color: #333;
+    }
+    h1 {
+      margin-bottom: 20px;
+      color: #1f2937;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #f3f4f6;
+    }
+    tr:nth-child(even) {
+      background: #f9fafb;
+    }
+    .status-read {
+      color: green;
+      font-weight: bold;
+    }
+    .status-unread {
+      color: red;
+      font-weight: bold;
+    }
+    pre {
+      white-space: pre-wrap;
+      font-family: inherit;
+      margin: 0;
+    }
+    button.mark-read-btn {
+      padding: 5px 10px;
+      cursor: pointer;
+      border: none;
+      background-color: #3b82f6;
+      color: white;
+      border-radius: 4px;
+      font-size: 0.9rem;
+    }
+    button.mark-read-btn:hover {
+      background-color: #2563eb;
+    }
+  </style>
+</head>
+<body>
+  <div id="header"></div> <!-- header chung -->
+
+  <main>
+    <h1>Danh sách câu hỏi khách hàng</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>User ID</th>
+          <th>Tên</th>
+          <th>Email</th>
+          <th>SĐT</th>
+          <th>Chủ đề</th>
+          <th>Nội dung</th>
+          <th>Ngày gửi</th>
+          <th>Trạng thái</th>
+          <th>Hành động</th>
+        </tr>
+      </thead>
+      <tbody id="questions-list">
+        <tr><td colspan="10">Đang tải...</td></tr>
+      </tbody>
+    </table>
+  </main>
+
+  <script type="module" src="questions.js"></script>
+</body>
+</html>

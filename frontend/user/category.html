@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Viper|Danh mục món ăn</title>
+  <link rel="icon" type="image/png" href="https://res.cloudinary.com/dacnobglx/image/upload/v1751352964/OIP_wiyqih.jpg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="/logo.png">
+  <link rel="stylesheet" href="category.css">
+</head>
+<body class="bg-white text-gray-800">
+
+  <!-- 🔸 Thanh điều hướng -->
+  <header class="bg-orange-500 text-white sticky top-0 z-10 shadow">
+    <div class="max-w-screen-lg mx-auto px-4 py-3 flex justify-between items-center">
+      <h1 class="text-xl font-bold">🍔 Viper</h1>
+      <nav class="space-x-4 text-sm">
+        <a href="category.html">Trang chủ</a>
+        <a href="cart.html">Giỏ hàng</a>
+          <a href="ask.html">Tư vấn </a>
+        <a href="#" onclick="logout()" class="text-red-300 hover:underline">Đăng xuất</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 🔍 Tìm kiếm -->
+  <div class="max-w-screen-lg mx-auto px-4 py-4" id="search">
+    <input id="search-input" placeholder="🔍 Tìm món ăn..." oninput="handleSearch()"
+      class="w-full p-3 border rounded-lg shadow-sm" />
+  </div>
+
+  <!-- 🧧 Banner khuyến mãi -->
+  <section class="max-w-screen-lg mx-auto px-4 mb-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <img src="https://res.cloudinary.com/dacnobglx/image/upload/v1745027151/banner2_dipow6.jpg"
+           alt="Banner 1"
+           class="w-full rounded-lg shadow" />
+      <img src="https://res.cloudinary.com/dacnobglx/image/upload/v1745027151/banner3_hw2pkz.jpg"
+           alt="Banner 2"
+           class="w-full rounded-lg shadow" />
+    </div>
+  </section>
+
+  <!-- 📂 Danh mục -->
+  <section class="max-w-screen-lg mx-auto px-4 mb-6">
+    <h2 class="text-xl font-bold mb-3">📂 Danh mục món ăn</h2>
+    <div id="category-list" class="grid grid-cols-4 sm:grid-cols-5 gap-4 text-center"></div>
+  </section>
+
+  <!-- ⏰ Gợi ý -->
+  <section class="max-w-screen-lg mx-auto px-4 mt-10">
+    <h2 class="text-xl font-bold mb-3">⏰ Gợi ý hôm nay</h2>
+    <div id="suggest-list" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"></div>
+  </section>
+
+  <!-- 🔥 Món hot -->
+  <section class="max-w-screen-lg mx-auto px-4 mt-10">
+    <h2 class="text-xl font-bold mb-3">🔥 Món bán chạy</h2>
+    <div id="popular-foods" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"></div>
+  </section>
+
+  <!-- 🎁 Combo -->
+  <section class="max-w-screen-lg mx-auto px-4 mt-10">
+    <h2 class="text-xl font-bold mb-3">🎁 Combo tiết kiệm</h2>
+    <div id="combo-list" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"></div>
+  </section>
+
+  <!-- 👣 Footer -->
+  <footer class="bg-orange-100 text-center text-sm py-6 mt-10 border-t">
+    <p class="text-gray-600">© 2025 Viper Food. All rights reserved.</p>
+    <p class="text-orange-500 mt-1">🍽️ Hân hạnh phục vụ bạn mỗi ngày!</p>
+    <div class="mt-4">
+      <p class="text-gray-700">📍 Địa chỉ: Xã Hòa Bình, Huyện Vĩnh Bảo, TP. Hải Phòng</p>
+      <p class="text-gray-700">📞 Liên hệ: 0909 123 456 | ✉️ Email: hotro@viperfood.vn</p>
+    </div>
+  </footer>
+
+  <script src="category.js"></script>
+</body>
+</html>

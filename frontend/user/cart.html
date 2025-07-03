@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+ <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Viper|Giỏ hàng</title>
+  <link rel="icon" type="image/png" href="https://res.cloudinary.com/dacnobglx/image/upload/v1751352964/OIP_wiyqih.jpg">
+  <link rel="stylesheet" href="cart.css" />
+</head>
+<body>
+  <header>
+    <h1>🛒 Giỏ hàng của bạn</h1>
+  </header>
+
+  <main>
+    <table id="cartTable">
+      <thead>
+        <tr>
+          <th>Món ăn</th>
+          <th>Giá</th>
+          <th>Số lượng</th>
+          <th>Tổng</th>
+          <th>Xoá</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Món ăn sẽ được thêm bằng JS -->
+      </tbody>
+    </table>
+
+    <div id="cartSummary">
+      <h3>Tổng cộng: <span id="totalPrice">0₫</span></h3>
+      <button onclick="checkout()">🛍️ Đặt hàng</button>
+    </div>
+  </main>
+
+  <script src="cart.js"></script>
+</body>
+</html>

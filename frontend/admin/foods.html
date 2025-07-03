@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Quản lý Món Ăn | Admin</title>
+  <style>
+    table {
+      width: 100%; border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #ccc; padding: 8px; text-align: left;
+    }
+    img.food-img {
+      width: 60px; height: 40px; object-fit: cover; border-radius: 4px;
+    }
+    #foodForm {
+      display: none; 
+      position: fixed; top: 10%; left: 50%; transform: translateX(-50%);
+      background: #fff; padding: 20px; box-shadow: 0 0 10px #00000066;
+      max-width: 500px; width: 90%;
+      z-index: 1000;
+    }
+    #overlay {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 999;
+    }
+    #foodForm label {
+      display: block;
+      margin-top: 10px;
+    }
+    #foodForm input[type="text"],
+    #foodForm input[type="number"],
+    #foodForm select,
+    #foodForm textarea {
+      width: 100%;
+      padding: 5px;
+      margin-top: 3px;
+      box-sizing: border-box;
+    }
+    #foodForm button {
+      margin-top: 15px;
+      padding: 8px 15px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Quản lý Món Ăn</h1>
+<button id="btnAddFood">Thêm món mới</button>
+<table id="foodsTable">
+  <thead>
+    <tr>
+      <th>ID</th><th>Ảnh</th><th>Tên</th><th>Giá</th><th>Danh mục</th><th>Tags</th><th>Mô tả</th><th>Combo</th><th>Hành động</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Dữ liệu sẽ load ở đây -->
+  </tbody>
+</table>
+
+<div id="overlay"></div>
+<div id="foodForm">
+  <h2 id="formTitle">Thêm món mới</h2>
+  <form id="formFood">
+    <input type="hidden" id="foodId" />
+    <label>Tên món:
+      <input type="text" id="foodName" required />
+    </label>
+    <label>Giá (VNĐ):
+      <input type="number" id="foodPrice" min="0" required />
+    </label>
+    <label>Danh mục:
+      <select id="foodCategory" required></select>
+    </label>
+    <label>Tags (phân cách dấu phẩy):
+      <input type="text" id="foodTags" placeholder="vd: cay, chay, moi" />
+    </label>
+    <label>Mô tả:
+      <textarea id="foodDescription" rows="3"></textarea>
+    </label>
+    <label>Combo:
+      <select id="foodIsCombo" required>
+        <option value="0">Không</option>
+        <option value="1">Có</option>
+      </select>
+    </label>
+    <label>Ảnh (chọn file mới hoặc để trống giữ nguyên):
+      <input type="file" id="foodImage" accept="image/*" />
+    </label>
+    <button type="submit">Lưu</button>
+    <button type="button" id="btnCancel">Huỷ</button>
+  </form>
+</div>
+
+<script type="module" src="foods.js"></script>
+
+</body>
+</html>

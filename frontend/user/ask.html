@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>📩 Tư vấn khách hàng | Viper</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f9f9f9; padding: 20px; }
+    #chatBox { border: 1px solid #ccc; padding: 10px; height: 300px; overflow-y: auto; background: #fff; margin-bottom: 10px; border-radius: 6px; }
+    #chatBox p.bot { color: #007bff; margin: 5px 0; }
+    #chatBox p.user { color: #28a745; text-align: right; margin: 5px 0; }
+    #chatForm { display: flex; gap: 10px; }
+    #chatInput { flex: 1; padding: 8px; border-radius: 4px; border: 1px solid #ccc; }
+    #chatForm button { padding: 8px 16px; border: none; background: #007bff; color: white; border-radius: 4px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>💬 Trợ lý tư vấn Viper</h1>
+
+  <div id="chatBox"></div>
+
+  <form id="chatForm">
+    <input type="text" id="chatInput" placeholder="Nhập câu trả lời..." required />
+    <button type="submit">Gửi</button>
+  </form>
+
+  <script>
+    const chatBox = document.getElementById("chatBox");
+    const chatForm = document.getElementById("chatForm");
+    const chatInput = document.getElementById("chatInput");
+
+    const steps = [
+      { key: "name", question: "👋 Xin chào! Tên bạn là gì?" },
+      { key: "phone", question: "📞 Số điện thoại của bạn là gì?" },
+      { key: "email", question: "📧 Bạn có thể cho mình email để liên hệ không? (bỏ qua nếu không có)" },
+      { key: "subject", question: "📝 Bạn cần tư vấn về món nào hoặc vấn đề gì?" },
+      { key: "message", question: "💬 Bạn có thể nói rõ yêu cầu hoặc câu hỏi cụ thể hơn không?" }
+    ];
+
+    let currentStep = 0;
+    let collectedData = {};
+
+    function addMessage(text, sender = "bot") {
+      const p = document.createElement("p");
+      p.textContent = text;
+      p.className = sender;
+      chatBox.appendChild(p);
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+
+    function askNextQuestion() {
+      if (currentStep < steps.length) {
+        addMessage(steps[currentStep].question, "bot");
+      } else {
+        sendToServer();
+      }
+    }
+
+    async function sendToServer() {
+      try {
+        const token = localStorage.getItem("token");
+        const res = await fetch("http://localhost:3000/api/messages", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            ...(token && { Authorization: "Bearer " + token })
+          },
+          body: JSON.stringify(collectedData)
+        });
+
+        const data = await res.json();
+        if (res.ok) {
+          addMessage("✅ Cảm ơn bạn! Yêu cầu của bạn đã được gửi. Chúng tôi sẽ phản hồi sớm!", "bot");
+          chatForm.style.display = "none";
+        } else {
+          throw new Error(data.error || "Lỗi khi gửi");
+        }
+      } catch (err) {
+        addMessage("❌ Đã có lỗi xảy ra. Vui lòng thử lại sau.", "bot");
+      }
+    }
+
+    chatForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const answer = chatInput.value.trim();
+      if (!answer) return;
+
+      addMessage(answer, "user");
+      collectedData[steps[currentStep].key] = answer;
+      chatInput.value = "";
+      currentStep++;
+      setTimeout(askNextQuestion, 500);
+    });
+
+    askNextQuestion();
+  </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+/* /frontend/user/login.css */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #eef2f3;
+  text-align: center;
+  padding: 50px;
+}
+
+form {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  display: inline-block;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+input {
+  margin: 12px;
+  padding: 10px;
+  width: 240px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+}
+
+button {
+  padding: 10px 25px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Viper|Đặt hàng</title>
+  <link rel="icon" type="image/png" href="https://res.cloudinary.com/dacnobglx/image/upload/v1751352964/OIP_wiyqih.jpg">
+  <link rel="stylesheet" href="order.css" />
+</head>
+<body>
+  <header>
+    <h1>🛍️ Xác nhận đơn hàng</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>🧾 Món đã chọn:</h2>
+      <ul id="orderItems"></ul>
+      <p id="voucherMessage"></p>
+      <p><strong>Tổng cộng: <span id="orderTotal">0₫</span></strong></p>
+    </section>
+
+    <section>
+      <label>🎁 Mã giảm giá:
+        <input type="text" id="voucher" />
+        <button type="button" id="applyVoucher">Áp dụng</button>
+      </label>
+    </section>
+
+    <form id="orderForm">
+      <h2>📋 Thông tin giao hàng</h2>
+      <label>Họ và tên:
+        <input type="text" id="name" required />
+      </label>
+      <label>Số điện thoại:
+        <input type="tel" id="phone" required />
+      </label>
+      <label>Địa chỉ giao hàng:
+        <textarea id="address" rows="3" required></textarea>
+      </label>
+      <button type="submit">✅ Đặt hàng</button>
+    </form>
+  </main>
+
+  <script src="order.js"></script>
+</body>
+</html>

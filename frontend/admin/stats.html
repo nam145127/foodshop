@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Thống kê đơn hàng | Admin</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    /* Reset cơ bản */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f3f4f6;
+      color: #1f2937;
+      margin: 20px;
+      min-height: 100vh;
+    }
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 30px;
+      color: #111827;
+      text-align: center;
+    }
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #2563eb;
+      border-bottom: 3px solid #3b82f6;
+      padding-bottom: 8px;
+      max-width: max-content;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    /* Container chung cho từng chart + bảng */
+    .chart-container {
+      max-width: 900px;
+      background: #fff;
+      margin: 0 auto 50px auto;
+      padding: 25px 30px;
+      border-radius: 15px;
+      box-shadow:
+        0 10px 15px -3px rgba(59, 130, 246, 0.1),
+        0 4px 6px -2px rgba(59, 130, 246, 0.05);
+      transition: box-shadow 0.3s ease;
+    }
+    .chart-container:hover {
+      box-shadow:
+        0 20px 25px -5px rgba(59, 130, 246, 0.2),
+        0 10px 10px -5px rgba(59, 130, 246, 0.1);
+    }
+    /* Bố cục canvas và bảng nằm ngang */
+    .chart-and-table {
+      display: flex;
+      gap: 30px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .chart-and-table canvas {
+      flex: 1 1 60%;
+      max-width: 600px;
+      height: 300px !important;
+    }
+    .data-table {
+      flex: 1 1 35%;
+      border-collapse: collapse;
+      max-width: 300px;
+      font-size: 0.9rem;
+      box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+      border-radius: 8px;
+      overflow: hidden;
+      background: #fefefe;
+    }
+    .data-table th, .data-table td {
+      border: 1px solid #ddd;
+      padding: 10px 8px;
+      text-align: center;
+    }
+    .data-table th {
+      background-color: #3b82f6;
+      color: white;
+      font-weight: 600;
+    }
+    /* Responsive nhỏ hơn */
+    @media (max-width: 768px) {
+      .chart-and-table {
+        flex-direction: column;
+        gap: 20px;
+      }
+      .chart-and-table canvas,
+      .data-table {
+        max-width: 100%;
+        flex: none;
+        height: 250px !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Thống kê đơn hàng</h1>
+
+  <div class="chart-container">
+    <h2>Đơn hàng theo ngày (7 ngày gần nhất)</h2>
+    <div class="chart-and-table">
+      <canvas id="dailyOrdersChart" height="150"></canvas>
+      <table id="dailyOrdersTable" class="data-table"></table>
+    </div>
+  </div>
+
+  <div class="chart-container">
+    <h2>Doanh thu theo ngày (7 ngày gần nhất)</h2>
+    <div class="chart-and-table">
+      <canvas id="dailyRevenueChart" height="150"></canvas>
+      <table id="dailyRevenueTable" class="data-table"></table>
+    </div>
+  </div>
+
+  <div class="chart-container">
+    <h2>Đơn hàng theo tháng (12 tháng gần nhất)</h2>
+    <div class="chart-and-table">
+      <canvas id="monthlyOrdersChart" height="150"></canvas>
+      <table id="monthlyOrdersTable" class="data-table"></table>
+    </div>
+  </div>
+
+  <div class="chart-container">
+    <h2>Doanh thu theo tháng (12 tháng gần nhất)</h2>
+    <div class="chart-and-table">
+      <canvas id="monthlyRevenueChart" height="150"></canvas>
+      <table id="monthlyRevenueTable" class="data-table"></table>
+    </div>
+  </div>
+
+  <script type="module" src="stats.js"></script>
+</body>
+</html>
