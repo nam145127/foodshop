@@ -17,7 +17,7 @@ export function loadHeader() {
   if (logoutBtn) {
     logoutBtn.addEventListener('click', () => {
       localStorage.clear();
-      window.location.href = '/user/login.html';
+      window.location.href = 'https://nam145127.github.io/foodshop/user/login.html';
     });
   }
 }
