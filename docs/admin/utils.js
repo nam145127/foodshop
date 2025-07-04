@@ -21,12 +21,12 @@ export function formatDate(dateString) {
 
 export function checkAdminAccess() {
   const token = localStorage.getItem('token');
-  if (!token) return location.href = 'https://nam145127.github.io/foodshop/user/login.html';
+  if (!token) return location.href = '';
 }
 
 document.addEventListener('click', e => {
   if (e.target.id === 'logoutBtn') {
     localStorage.removeItem('token');
-    location.href = 'https://nam145127.github.io/foodshop/user/login.html';
+    location.href = '';
   }
 });
