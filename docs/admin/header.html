@@ -1,4 +1,4 @@
-<!-- public/admin/header.html -->
+<body>
 <header style="background-color: #1f2937; color: white; padding: 16px; display: flex; justify-content: space-between; align-items: center;">
   <h1 style="font-size: 1.5rem; font-weight: bold;">🐍 Viper Admin</h1>
   <nav>
@@ -14,14 +14,9 @@
 </header>
 
 
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const logoutBtn = document.getElementById('logoutBtn');
-    if (logoutBtn) {
-      logoutBtn.addEventListener('click', () => {
-        localStorage.clear();
-        window.location.href = 'https://nam145127.github.io/foodshop/user/login.html';
-      });
-    }
-  });
-</script>
+
+  <script type="module">
+    import { loadHeader } from './header.js';
+    loadHeader();
+  </script>
+</body>
