@@ -28,9 +28,10 @@ document.getElementById('loginForm').addEventListener('submit', async function (
 
     // ✅ Điều hướng theo vai trò
     if (role === 'admin' || role === 'staff') {
-      window.location.href = 'admin/dashboard.html';
+      window.location.href = 'https://nam145127.github.io/foodshop/admin/dashboard.html';
     } else {
-      window.location.href = 'user/category.html';
+      window.location.href = 'https://nam145127.github.io/foodshop/user/category.html';
+
     }
 
   } catch (err) {
