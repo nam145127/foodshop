@@ -17,7 +17,7 @@ document.getElementById('registerForm').addEventListener('submit', async functio
     if (!res.ok) throw new Error(data.error || 'Đăng ký thất bại');
 
     alert('Đăng ký thành công! Chuyển đến trang đăng nhập...');
-    window.location.href = '/frontend/user/login.html';
+    window.location.href = 'https://nam145127.github.io/foodshop/user/login.html';
 
   } catch (err) {
     alert(err.message);
