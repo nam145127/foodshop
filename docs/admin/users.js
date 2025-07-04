@@ -7,7 +7,7 @@ const usersTableBody = document.querySelector('#usersTable tbody');
 
 async function fetchUsers() {
   try {
-    const res = await fetch('http://localhost:3000/api/admin/users', {
+    const res = await fetch('https://viper-w65l.onrender.com/api/admin/users', {
       headers: { Authorization: `Bearer ${token}` }
     });
     if (!res.ok) {
@@ -56,7 +56,7 @@ usersTableBody.addEventListener('click', async (e) => {
     const newRole = select.value;
 
     try {
-      const res = await fetch(`http://localhost:3000/api/admin/users/${userId}/role`, {
+      const res = await fetch(`https://viper-w65l.onrender.com/api/admin/users/${userId}/role`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

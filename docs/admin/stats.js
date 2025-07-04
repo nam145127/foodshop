@@ -6,7 +6,7 @@ const token = localStorage.getItem('token');
 
 async function fetchStats() {
   try {
-    const res = await fetch('http://localhost:3000/api/admin/stats', {
+    const res = await fetch('https://viper-w65l.onrender.com/api/admin/stats', {
       headers: { Authorization: `Bearer ${token}` }
     });
     if (!res.ok) {

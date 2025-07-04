@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     else if (hour >= 17) time = "toi";
 
     try {
-      const res = await fetch(`http://localhost:3000/api/foods/suggest?time=${time}`);
+      const res = await fetch(`https://viper-w65l.onrender.com/api/foods/suggest?time=${time}`);
       const foods = await res.json();
       renderFoods(suggestList, foods);
     } catch (err) {
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   // 🔥 Món bán chạy
   async function loadPopular() {
     try {
-      const res = await fetch("http://localhost:3000/api/foods/popular");
+      const res = await fetch("https://viper-w65l.onrender.com/api/foods/popular");
       const foods = await res.json();
       renderFoods(popularFoods, foods);
     } catch (err) {
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   // 🎁 Combo tiết kiệm
   async function loadCombos() {
     try {
-      const res = await fetch("http://localhost:3000/api/foods/combos");
+      const res = await fetch("https://viper-w65l.onrender.com/api/foods/combos");
       const foods = await res.json();
       renderFoods(comboList, foods);
     } catch (err) {

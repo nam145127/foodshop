@@ -42,7 +42,7 @@ document.getElementById("applyVoucher").addEventListener("click", async () => {
   if (!code) return alert("❗ Hãy nhập mã giảm giá");
 
   try {
-    const res = await fetch("http://localhost:3000/api/vouchers/check", {
+    const res = await fetch("https://viper-w65l.onrender.com/api/vouchers/check", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -82,7 +82,7 @@ document.getElementById("orderForm").addEventListener("submit", async function (
   try {
     const token = localStorage.getItem("token");
 
-    const response = await fetch("http://localhost:3000/api/orders", {
+    const response = await fetch("https://viper-w65l.onrender.com/api/orders", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

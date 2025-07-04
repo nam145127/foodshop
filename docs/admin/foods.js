@@ -27,7 +27,7 @@ let foods = [];
 
 async function fetchCategories() {
   try {
-    const res = await fetch('http://localhost:3000/api/admin/categories', {
+    const res = await fetch('https://viper-w65l.onrender.com/api/admin/categories', {
       headers: { Authorization: `Bearer ${token}` }
     });
     if (!res.ok) throw new Error('Lỗi khi tải danh mục');
@@ -40,7 +40,7 @@ async function fetchCategories() {
 
 async function fetchFoods() {
   try {
-    const res = await fetch('http://localhost:3000/api/admin/foods', {
+    const res = await fetch('https://viper-w65l.onrender.com/api/admin/foods', {
       headers: { Authorization: `Bearer ${token}` }
     });
     if (!res.ok) {
@@ -127,7 +127,7 @@ foodsTableBody.addEventListener('click', async (e) => {
     const id = e.target.dataset.id;
     if (confirm('Bạn có chắc muốn xóa món này?')) {
       try {
-        const res = await fetch(`http://localhost:3000/api/admin/foods/${id}`, {
+        const res = await fetch(`https://viper-w65l.onrender.com/api/admin/foods/${id}`, {
           method: 'DELETE',
           headers: { Authorization: `Bearer ${token}` }
         });
@@ -176,7 +176,7 @@ formFood.addEventListener('submit', async (e) => {
   try {
     let res;
     if (id) {
-      res = await fetch(`http://localhost:3000/api/admin/foods/${id}`, {
+      res = await fetch(`https://viper-w65l.onrender.com/api/admin/foods/${id}`, {
         method: 'PUT',
         headers: {
           Authorization: `Bearer ${token}`
@@ -184,7 +184,7 @@ formFood.addEventListener('submit', async (e) => {
         body: formData
       });
     } else {
-      res = await fetch('http://localhost:3000/api/admin/foods', {
+      res = await fetch('https://viper-w65l.onrender.com/api/admin/foods', {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${token}`

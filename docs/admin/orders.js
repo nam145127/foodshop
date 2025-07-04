@@ -6,7 +6,7 @@ checkAdminAccess();
 const token = localStorage.getItem('token');
 const tableBody = document.querySelector('#ordersTable tbody');
 
-fetch('http://localhost:3000/api/admin/orders', {
+fetch('https://viper-w65l.onrender.com/api/admin/orders', {
   headers: { Authorization: `Bearer ${token}` }
 })
   .then(async res => {
@@ -54,7 +54,7 @@ tableBody.addEventListener('click', async e => {
   if (e.target.classList.contains('view-btn')) {
     const id = e.target.dataset.id;
     try {
-      const res = await fetch(`http://localhost:3000/api/admin/orders/${id}`, {
+      const res = await fetch(`https://viper-w65l.onrender.com/api/admin/orders/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       if (!res.ok) {
@@ -82,7 +82,7 @@ tableBody.addEventListener('click', async e => {
     if (!confirmUpdate) return;
 
     try {
-      const res = await fetch(`http://localhost:3000/api/admin/orders/${id}`, {
+      const res = await fetch(`https://viper-w65l.onrender.com/api/admin/orders/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

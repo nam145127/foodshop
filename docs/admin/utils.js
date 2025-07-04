@@ -21,12 +21,12 @@ export function formatDate(dateString) {
 
 export function checkAdminAccess() {
   const token = localStorage.getItem('token');
-  if (!token) return location.href = 'http://localhost:3000/user/login.html';
+  if (!token) return location.href = 'https://viper-w65l.onrender.com/user/login.html';
 }
 
 document.addEventListener('click', e => {
   if (e.target.id === 'logoutBtn') {
     localStorage.removeItem('token');
-    location.href = 'http://localhost:3000/user/login.html';
+    location.href = 'https://viper-w65l.onrender.com/user/login.html';
   }
 });

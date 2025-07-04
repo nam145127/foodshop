@@ -1,6 +1,6 @@
 import { loadHeader } from './utils.js';
 
-const API = 'http://localhost:3000/api/admin/questions';
+const API = 'https://viper-w65l.onrender.com/api/admin/questions';
 const token = localStorage.getItem('token');
 const listEl = document.getElementById('questions-list');
 
@@ -51,7 +51,7 @@ function renderQuestions(questions) {
 
 async function markAsRead(id, button) {
   try {
-    const res = await fetch(`http://localhost:3000/api/admin/questions/${id}/read`, {
+    const res = await fetch(`https://viper-w65l.onrender.com/api/admin/questions/${id}/read`, {
       method: 'PUT',
       headers: {
         Authorization: `Bearer ${token}`,

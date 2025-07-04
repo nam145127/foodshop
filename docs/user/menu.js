@@ -69,7 +69,7 @@ function renderFoodList(data) {
 }
 
 function loadFoods(categoryId) {
-  fetch(`http://localhost:3000/api/foods?category_id=${categoryId}`)
+  fetch(`https://viper-w65l.onrender.com/api/foods?category_id=${categoryId}`)
     .then(res => res.json())
     .then(data => renderFoodList(data))
     .catch(err => {
@@ -79,7 +79,7 @@ function loadFoods(categoryId) {
 }
 
 function searchFoods(keyword) {
-  fetch(`http://localhost:3000/api/foods/search?keyword=${encodeURIComponent(keyword)}`)
+  fetch(`https://viper-w65l.onrender.com/api/foods/search?keyword=${encodeURIComponent(keyword)}`)
     .then(res => res.json())
     .then(data => renderFoodList(data))
     .catch(err => {
